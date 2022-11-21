@@ -9,14 +9,14 @@ COMPOSE_USER_ID=$(id -u)
 COMPOSE_GROUP_ID=$(id -g)
 EOF
 
+echo "Will run as $(whoami)"
 
-if [ `which dokcer-compose` ]; then
-	compose='docker-compose'
-else
-	compose='docker compose'
-fi
-
-$compose up -d
-
-$compose logs -f
-
+#if [ `which dokcer-compose` ]; then
+#	compose='docker-compose'
+#else
+#	compose='docker compose'
+#fi
+#
+#$compose up -d
+#
+#$compose logs -f

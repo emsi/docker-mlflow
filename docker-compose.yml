@@ -7,8 +7,11 @@ services:
       context: .
       dockerfile: Dockerfile
     user: ${COMPOSE_USER_ID}:${COMPOSE_GROUP_ID}
+    working_dir: ${PWD}
     expose:
       - 5000
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
     init: true
