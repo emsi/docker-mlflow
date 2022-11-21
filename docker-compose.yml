@@ -1,0 +1,14 @@
+version: '2.4'
+
+services:
+  mlflow:
+    image: emsi/mlflow
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    user: ${COMPOSE_USER_ID}:${COMPOSE_GROUP_ID}
+    expose:
+      - 5000
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    init: true
