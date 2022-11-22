@@ -7,6 +7,7 @@ script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 cat > "${script_dir}/.env" << EOF
 COMPOSE_USER_ID=$(id -u)
 COMPOSE_GROUP_ID=$(id -g)
+COMPOSE_PROJECT_NAME="$(whoami)-mlflow"
 EOF
 
 echo "Will run as $(whoami)"
